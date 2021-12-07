@@ -20,7 +20,27 @@
       "ProjectGuid": "ac570a32-39fa-4c2b-ac03-dc74694144a7",
       "DisplayName": "PublicApi",
       "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "c3466ba8-56e3-434f-87c2-e9e3034c6ed6": {
+      "ProjectGuid": "c3466ba8-56e3-434f-87c2-e9e3034c6ed6",
+      "DisplayName": "PublicApi",
+      "ColorIndex": 4
+    },
+    "0944968b-b727-40db-beef-ceaa5170dcbb": {
+      "ProjectGuid": "0944968b-b727-40db-beef-ceaa5170dcbb",
+      "DisplayName": "Application",
+      "ColorIndex": 5
+    },
+    "93776b72-72f3-44f3-9f01-1100b3253360": {
+      "ProjectGuid": "93776b72-72f3-44f3-9f01-1100b3253360",
+      "DisplayName": "Domain",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 7
 }

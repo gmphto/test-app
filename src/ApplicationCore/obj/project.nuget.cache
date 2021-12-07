@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jevRtAEDvob6A/6s5nz8krfPBkuHXOu8Bg1hCbw2S12lGIvKLrupPsLe9S4g8e8ruDZ2a+4lJkRCgJCOkzpM3Q==",
+  "dgSpecHash": "xP0ZcUX+pk3bKinqJEsneoh9nF/8H1zCZ+Vgx7RcXLIcXK09l0va54j5tbZOaXCJTg1m3+gg6iGrXCSsqD5DbA==",
   "success": true,
-  "projectFilePath": "C:\\Code\\test\\src\\ApplicationCore\\ApplicationCore.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Code\\test\\src\\ApplicationCore\\Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gift.mphato\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

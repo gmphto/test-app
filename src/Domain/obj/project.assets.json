@@ -1,42 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
-      "MediatR/9.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.1/MediatR.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/MediatR.dll": {}
-        }
-      }
-    }
+    "net6.0": {}
   },
-  "libraries": {
-    "MediatR/9.0.0": {
-      "sha512": "8b3UYNxegHVYcJMG2zH8wn+YqxLvXG+eMfj0cMCq/jTW72p6O3PCKMkrIv0mqyxdW7bA4gblsocw7n+/9Akg5g==",
-      "type": "package",
-      "path": "mediatr/9.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "gradient_128x128.png",
-        "lib/net461/MediatR.dll",
-        "lib/net461/MediatR.xml",
-        "lib/netstandard2.0/MediatR.dll",
-        "lib/netstandard2.0/MediatR.xml",
-        "lib/netstandard2.1/MediatR.dll",
-        "lib/netstandard2.1/MediatR.xml",
-        "mediatr.9.0.0.nupkg.sha512",
-        "mediatr.nuspec"
-      ]
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net6.0": [
-      "MediatR >= 9.0.0"
-    ]
+    "net6.0": []
   },
   "packageFolders": {
     "C:\\Users\\gift.mphato\\.nuget\\packages\\": {},
@@ -46,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Code\\test\\src\\ApplicationCore\\Application.csproj",
-      "projectName": "Application",
-      "projectPath": "C:\\Code\\test\\src\\ApplicationCore\\Application.csproj",
+      "projectUniqueName": "C:\\Code\\test\\src\\Domain\\Domain.csproj",
+      "projectName": "Domain",
+      "projectPath": "C:\\Code\\test\\src\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\gift.mphato\\.nuget\\packages\\",
-      "outputPath": "C:\\Code\\test\\src\\ApplicationCore\\obj\\",
+      "outputPath": "C:\\Code\\test\\src\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -84,12 +53,6 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
-        "dependencies": {
-          "MediatR": {
-            "target": "Package",
-            "version": "[9.0.0, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",
