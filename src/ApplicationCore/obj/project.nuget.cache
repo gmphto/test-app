@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "xP0ZcUX+pk3bKinqJEsneoh9nF/8H1zCZ+Vgx7RcXLIcXK09l0va54j5tbZOaXCJTg1m3+gg6iGrXCSsqD5DbA==",
+  "dgSpecHash": "oXsnFuo8iOVqtwip+XuhJIM1GbdehxnzGNQ8WjhyaEpfw3QT/bDFFlDOI6/o8XfqEgCDgqg3keH8aAZcIZhqLA==",
   "success": true,
   "projectFilePath": "C:\\Code\\test\\src\\ApplicationCore\\Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\gift.mphato\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
+    "C:\\Users\\g.mphato.admin\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\g.mphato.admin\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
+    "C:\\Users\\g.mphato.admin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.0.0\\microsoft.extensions.dependencyinjection.abstractions.2.0.0.nupkg.sha512"
   ],
   "logs": []
 }
