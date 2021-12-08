@@ -10,3 +10,6 @@ C:\Code\test\src\ApplicationCore\obj\Debug\net6.0\Application.csproj.CoreCompile
 C:\Code\test\src\ApplicationCore\obj\Debug\net6.0\Application.dll
 C:\Code\test\src\ApplicationCore\obj\Debug\net6.0\ref\Application.dll
 C:\Code\test\src\ApplicationCore\obj\Debug\net6.0\Application.pdb
+C:\Code\test\src\ApplicationCore\bin\Debug\net6.0\Domain.dll
+C:\Code\test\src\ApplicationCore\bin\Debug\net6.0\Domain.pdb
+C:\Code\test\src\ApplicationCore\obj\Debug\net6.0\Application.csproj.CopyComplete

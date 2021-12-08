@@ -11,6 +11,7 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Application.Constants;
+using Infrastructure;
 
 namespace PublicApi;
 
@@ -26,6 +27,8 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddApplication();
+        services.AddInfrastructure(Configuration);
+
         services.AddControllers();
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
