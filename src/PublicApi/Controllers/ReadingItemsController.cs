@@ -18,7 +18,5 @@ public class ReadingItemsController : ApiControllerBase
     public async Task<List<ReadingItemExcel>> UploadMeterReadings([FromForm] UploadReadingsCommand command)
     {
         return await Mediator.Send(command);
-
-        //return NoContent();
     }
 }
