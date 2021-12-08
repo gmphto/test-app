@@ -65,11 +65,7 @@
               "target": "Package",
               "version": "[5.0.12, )"
             },
-            "Microsoft.Office.Interop.Excel": {
-              "target": "Package",
-              "version": "[15.0.4795.1000, )"
-            },
-            "System.Data.OleDb": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.0, )"
             }

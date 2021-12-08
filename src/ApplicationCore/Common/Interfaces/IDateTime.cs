@@ -1,7 +1,7 @@
 ﻿
 namespace Application.Common.Interfaces;
 
-public class IDateTime
+public interface IDateTime
 {
-    DateTime Now { get; set; }
+    DateTime Now { get; }
 }

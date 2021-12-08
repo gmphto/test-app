@@ -65,11 +65,7 @@
               "target": "Package",
               "version": "[5.0.12, )"
             },
-            "Microsoft.Office.Interop.Excel": {
-              "target": "Package",
-              "version": "[15.0.4795.1000, )"
-            },
-            "System.Data.OleDb": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.0, )"
             }
@@ -201,11 +197,23 @@
               "target": "Package",
               "version": "[2.14.0, )"
             },
+            "IdentityServer4.EntityFramework.Storage": {
+              "target": "Package",
+              "version": "[4.1.2, )"
+            },
+            "Microsoft.AspNetCore.ApiAuthorization.IdentityServer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[5.0.12, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Options": {
               "target": "Package",
               "version": "[6.0.0, )"
             }
