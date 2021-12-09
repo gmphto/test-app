@@ -1,6 +1,10 @@
-﻿using Domain.Entities;
+﻿using Application.Common.Interfaces;
+using Domain.Entities;
 using Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using System.Data;
+using System.Reflection;
 
 namespace Infrastructure.Persistence;
 
@@ -24,39 +28,35 @@ public static class ApplicationDbContextSeed
         }
     }
 
-    public static async Task SeedSampleDataAsync(ApplicationDbContext context)
+    public static async Task SeedSampleDataAsync(ApplicationDbContext context, IExcelReader reader)
     {
-        // Seed, if necessary
-        //if (!context.TodoLists.Any())
-        //{
-        //    context.TodoLists.Add(new TodoList
-        //    {
-        //        Title = "Shopping",
-        //        Colour = Colour.Blue,
-        //        Items =
-        //            {
-        //                new TodoItem { Title = "Apples", Done = true },
-        //                new TodoItem { Title = "Milk", Done = true },
-        //                new TodoItem { Title = "Bread", Done = true },
-        //                new TodoItem { Title = "Toilet paper" },
-        //                new TodoItem { Title = "Pasta" },
-        //                new TodoItem { Title = "Tissues" },
-        //                new TodoItem { Title = "Tuna" },
-        //                new TodoItem { Title = "Water" }
-        //            }
-        //    });
 
-        //    await context.SaveChangesAsync();
-        //}
+        string resourceName = "Infrastructure.SeedData.Test_Accounts.xlsx";
+        var assembly = Assembly.GetExecutingAssembly();
+        var stream = assembly.GetManifestResourceStream(resourceName);
 
-        // Seed, accounts
-        if(!context.AccountItems.Any())
+        if (stream != null)
         {
-            // Retrieve Account Data from Document
-            context.AccountItems.Add(new AccountItem
+            DataTable data = reader.ReadExcelDocument(stream);
+
+            if (!context.AccountItems.Any()) // Seed accounts, if needed
             {
 
-            });
+                var list = 
+                data.AsEnumerable()
+                    .Select(row => new AccountItem
+                 {
+                     AccountId = int.Parse(row.Field<string>("AccountId")),
+                     FirstName = row.Field<string>("FirstName"),
+                     LastName = row.Field<string>("FirstName")
+                 }).ToList();
+
+                context.AccountItems.AddRange(list);
+
+                await context.SaveChangesAsync();
+            }
+
         }
+
     }
 }

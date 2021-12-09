@@ -12,6 +12,8 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Application.Constants;
 using Infrastructure;
+using Application.Common.Interfaces;
+using Infrastructure.Files;
 
 namespace PublicApi;
 

@@ -17,12 +17,12 @@ public class UploadReadingsCommand : IRequest<List<ReadingItemExcel>>
 
 }
 
-public class CreateTodoItemCommandHandler : IRequestHandler<UploadReadingsCommand, List<ReadingItemExcel>>
+public class CreateReadingItemCommandHandler : IRequestHandler<UploadReadingsCommand, List<ReadingItemExcel>>
 {
 
     private readonly IExcelReader _excelReader;
 
-    public CreateTodoItemCommandHandler (IExcelReader excelReader)
+    public CreateReadingItemCommandHandler(IExcelReader excelReader)
     {
         _excelReader = excelReader;
     }
@@ -35,8 +35,8 @@ public class CreateTodoItemCommandHandler : IRequestHandler<UploadReadingsComman
         var item = dt.AsEnumerable().Select(row => new ReadingItemExcel
         {
             Id = row.Field<string>("AccountId"),
-            ReadingValue = row.Field<string>("MeterReadValue"),
-            ReadingDate = row.Field<string>("MeterReadingDateTime"),
+            Value = row.Field<string>("MeterReadValue"),
+            Date = row.Field<string>("MeterReadingDateTime"),
         }).ToList();
 
         return Task.FromResult(item);

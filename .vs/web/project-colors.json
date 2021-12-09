@@ -40,7 +40,22 @@
       "ProjectGuid": "93776b72-72f3-44f3-9f01-1100b3253360",
       "DisplayName": "Domain",
       "ColorIndex": 6
+    },
+    "717145fb-6945-4ec9-89fb-ee677304acd4": {
+      "ProjectGuid": "717145fb-6945-4ec9-89fb-ee677304acd4",
+      "DisplayName": "Test",
+      "ColorIndex": 7
+    },
+    "d7377302-f724-4923-9186-2f65e29bff0e": {
+      "ProjectGuid": "d7377302-f724-4923-9186-2f65e29bff0e",
+      "DisplayName": "Domain",
+      "ColorIndex": 8
+    },
+    "a33e8fd0-fded-4467-b748-0980336df3bc": {
+      "ProjectGuid": "a33e8fd0-fded-4467-b748-0980336df3bc",
+      "DisplayName": "Infrastructure",
+      "ColorIndex": 9
     }
   },
-  "NextColorIndex": 7
+  "NextColorIndex": 10
 }

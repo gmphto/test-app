@@ -9,3 +9,4 @@ C:\Code\test\src\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
 C:\Code\test\src\Domain\obj\Debug\net6.0\Domain.dll
 C:\Code\test\src\Domain\obj\Debug\net6.0\ref\Domain.dll
 C:\Code\test\src\Domain\obj\Debug\net6.0\Domain.pdb
+C:\Code\test\src\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache

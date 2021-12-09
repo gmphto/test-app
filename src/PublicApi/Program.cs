@@ -1,4 +1,8 @@
+using Application.Common.Interfaces;
+using Infrastructure.Identity;
+using Infrastructure.Persistence;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using PublicApi;
 
 namespace Code.WebUI;
@@ -8,7 +12,41 @@ public class Program
     public async static Task Main(string[] args)
 
     {
-        await CreateHostBuilder(args).Build().RunAsync();
+
+        var host = CreateHostBuilder(args).Build();
+
+        using (var scope = host.Services.CreateScope())
+        {
+            var services = scope.ServiceProvider;
+
+            try
+            {
+
+                var context = services.GetRequiredService<ApplicationDbContext>();
+
+                if (context.Database.IsSqlServer())
+                {
+                    context.Database.Migrate();
+                }
+
+                var excel = services.GetRequiredService<IExcelReader>();
+
+
+                await ApplicationDbContextSeed.SeedSampleDataAsync(context, excel);
+
+            }
+
+            catch (Exception ex)
+            {
+                var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+
+                logger.LogError(ex, "An error occurred while migrating or seeding the database.");
+
+                throw;
+            }
+        }
+
+        await host.RunAsync();
 
     }
 

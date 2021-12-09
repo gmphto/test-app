@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "fAmlZ20nhCP8b8pDE2WZCIVmF3H6P/+ROlC7iSa/XvCS0V2hlD6qPceRDXcX14p9gwkLWwGY6cSGv5IBuHCC7Q==",
+  "dgSpecHash": "GhI3tezcPQWLIrMIIWlBGx19IbcBgsthaPVOfg/Mjzr6yDkjchIVKJ0t2IUqjsybIbMp2jLGBN6x4TwYLb+bbA==",
   "success": true,
   "projectFilePath": "C:\\Code\\test\\src\\ApplicationCore\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\g.mphato.admin\\.nuget\\packages\\documentformat.openxml\\2.14.0\\documentformat.openxml.2.14.0.nupkg.sha512",
+    "C:\\Users\\g.mphato.admin\\.nuget\\packages\\fluentvalidation\\10.3.5\\fluentvalidation.10.3.5.nupkg.sha512",
     "C:\\Users\\g.mphato.admin\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\g.mphato.admin\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\g.mphato.admin\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.12\\microsoft.aspnetcore.http.features.5.0.12.nupkg.sha512",

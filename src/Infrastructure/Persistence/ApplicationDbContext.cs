@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using Application.Common.Interfaces;
 using Domain.Entities;
 using Microsoft.Extensions.Options;
-using IdentityServer4.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Domain.Common;
 using System.Reflection;
@@ -21,9 +20,9 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, 
 
     public ApplicationDbContext(
         DbContextOptions<ApplicationDbContext> options,
-        IOptions<OperationalStoreOptions> operationalStoreOptions,
+        IOptions<Duende.IdentityServer.EntityFramework.Options.OperationalStoreOptions> operationalStoreOptions,
         IDomainEventService domainEventService,
-    IDateTime dateTime) : base(options, (IOptions<Duende.IdentityServer.EntityFramework.Options.OperationalStoreOptions>)operationalStoreOptions)
+    IDateTime dateTime) : base(options, operationalStoreOptions)
     {
         _domainEventService = domainEventService;
         _dateTime = dateTime;
@@ -68,6 +67,12 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, 
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+        builder.Entity<AccountItem>()
+       .HasKey(c => c.AccountId);
+
+        builder.Entity<ReadingItem>()
+        .HasKey(c => c.ReadingId);
 
         base.OnModelCreating(builder);
     }
