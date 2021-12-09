@@ -44,7 +44,7 @@ public class CreateReadingItemCommandHandler : IRequestHandler<CreateMeterReadIt
             if (isValid)
             {
                 item.Account = await _context.AccountItems.FindAsync(new object[] { item.Id }, cancellationToken);
-                _context.ReadingItems.Add(item);
+                _context.MeterReadItems.Add(item);
                 await _context.SaveChangesAsync(cancellationToken);
                 result.Succesful += 1;
             }else

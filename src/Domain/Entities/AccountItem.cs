@@ -8,6 +8,5 @@ public class AccountItem : AuditableEntity
     public int Id { get; set; }
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
-
-    public ICollection<MeterReadItem>? ReadingItems { get; set; }
+    public ICollection<MeterReadItem>? MeterReadItems { get; set; }
 }

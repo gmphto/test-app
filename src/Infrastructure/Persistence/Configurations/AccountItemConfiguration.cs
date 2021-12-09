@@ -14,7 +14,7 @@ public class AccountItemConfiguration : IEntityTypeConfiguration<AccountItem>
             .IsRequired();
 
         builder
-            .HasMany<MeterReadItem>(ac => ac.ReadingItems)
+            .HasMany<MeterReadItem>(ac => ac.MeterReadItems)
             .WithOne(r => r.Account)
             .IsRequired()
             // Cascade on Delete 

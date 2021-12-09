@@ -25,7 +25,7 @@ public class CreateMeterReadItemsCommandValidator : AbstractValidator<MeterReadI
 
     public bool BeUniqueReading(int accountId)
     {
-        return _context.ReadingItems
+        return _context.MeterReadItems
             .All(l => l.Id != accountId);
     }
 
@@ -37,10 +37,11 @@ public class CreateMeterReadItemsCommandValidator : AbstractValidator<MeterReadI
 
     private static bool BeInNumberFormat(string x)
     {
-        if (IsNumeric(x)) return IsFiveDigit(x);
+        if (IsNumeric(x) && IsNotNegative(x)) return IsFiveDigit(x);
         return false;
     }
     private static bool IsFiveDigit(string x) => x.Length >= 5;
     private static bool IsNumeric(string x) => int.TryParse(x, out int _);
+    private static bool IsNotNegative(string x) => int.Parse(x) > 0;
 
 }

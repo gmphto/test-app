@@ -28,7 +28,7 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, 
         _dateTime = dateTime;
     }
 
-    public DbSet<MeterReadItem> ReadingItems => Set<MeterReadItem>();
+    public DbSet<MeterReadItem> MeterReadItems => Set<MeterReadItem>();
     public DbSet<AccountItem> AccountItems => Set<AccountItem>();
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

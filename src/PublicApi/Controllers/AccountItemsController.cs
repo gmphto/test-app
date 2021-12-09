@@ -7,7 +7,7 @@ namespace PublicApi.Controllers;
 public class AccountItemsController : ApiControllerBase
 {
     [HttpGet("/accounts")]
-    public async Task<List<AccountItem>> Get([FromQuery] GetAccountListQuery query)
+    public async Task<List<AccountItem>> Get([FromQuery] GetAccountItemsQuery query)
     {
         return await Mediator.Send(query);
     }

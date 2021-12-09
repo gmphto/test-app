@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Application.ReadingItems.Queries.GetHelloWorld;
 using Domain.Entities;
 using System.Data;
 using Application.Common.Interfaces;
 using Application.MeterReadItems.Commands.CreateMeterReadItems;
+using Application.MeterReadItems.Queries.GetMeterReadItems;
 
 namespace PublicApi.Controllers;
 
@@ -14,22 +14,17 @@ public class MeterReadItemsController : ApiControllerBase
 
     public MeterReadItemsController(IExcelReader excelReader)
     {
+        // NOTE: Could be moved
         _excelReader = excelReader;
     }
 
-    [HttpGet("/")]
-    public async Task<string> Get([FromQuery] GetHelloWorldQuery query)
+    [HttpGet("/meter-reading")]
+    public async Task<List<MeterReadItem>> Get()
     {
-        return await Mediator.Send(query);
+        return await Mediator.Send(new GetMeterReadItemsQuery());
     }
 
-    //[HttpPost("/meter-reading-uploads")]
-    //public async Task<List<MeterReadItem>> UploadMeterReadings([FromForm] CreateMeterReadItemCommand command)
-    //{
-    //    return await Mediator.Send(command);
-    //}
-
-    [HttpPost("/meter-reading-upload")]
+    [HttpPost("/meter-reading-uploads")]
     public async Task<MeterReadItemsDto> UploadMeterReadItems(IFormFile file)
     {
 
