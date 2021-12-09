@@ -18,14 +18,14 @@ public class MeterReadItemsController : ApiControllerBase
         _excelReader = excelReader;
     }
 
-    [HttpGet("/meter-reading")]
+    [HttpGet("/meter-readings")]
     public async Task<List<MeterReadItem>> Get()
     {
         return await Mediator.Send(new GetMeterReadItemsQuery());
     }
 
     [HttpPost("/meter-reading-uploads")]
-    public async Task<MeterReadItemsDto> UploadMeterReadItems(IFormFile file)
+    public async Task<CreateMeterReadItemsResponse> UploadMeterReadItems(IFormFile file)
     {
 
         var items = _excelReader.ReadExcelDocument(file.OpenReadStream()).AsEnumerable().Select(row => new MeterReadItem

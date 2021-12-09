@@ -14,13 +14,13 @@ using FluentValidation.Results;
 
 namespace Application.MeterReadItems.Commands.CreateMeterReadItems;
 
-public class CreateMeterReadItemsCommand : IRequest<MeterReadItemsDto>
+public class CreateMeterReadItemsCommand : IRequest<CreateMeterReadItemsResponse>
 {
     public List<MeterReadItem>? Items { get; set; }
 
 }
 
-public class CreateReadingItemCommandHandler : IRequestHandler<CreateMeterReadItemsCommand, MeterReadItemsDto>
+public class CreateReadingItemCommandHandler : IRequestHandler<CreateMeterReadItemsCommand, CreateMeterReadItemsResponse>
 {
 
     private readonly IApplicationDbContext _context;
@@ -30,10 +30,10 @@ public class CreateReadingItemCommandHandler : IRequestHandler<CreateMeterReadIt
         _context = context;
     }
 
-    public async Task<MeterReadItemsDto> Handle(CreateMeterReadItemsCommand request, CancellationToken cancellationToken)
+    public async Task<CreateMeterReadItemsResponse> Handle(CreateMeterReadItemsCommand request, CancellationToken cancellationToken)
     {
         if (request.Items == null)   throw new ArgumentNullException(nameof(request.Items));
-        var result = new MeterReadItemsDto();
+        var result = new CreateMeterReadItemsResponse();
 
         // NOTE: Could be moved
         var validator = new CreateMeterReadItemsCommandValidator(_context);
