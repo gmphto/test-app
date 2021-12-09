@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using System.Data;
+﻿using System.Data;
 
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using Application.Common.Interfaces;
+using ExcelDataReader;
 
 namespace Infrastructure.Files;
 
@@ -16,47 +16,37 @@ public class ExcelReader : IExcelReader
             try
             {
 
-                //Open the Excel file in Read Mode using OpenXml.
-                using (SpreadsheetDocument doc = SpreadsheetDocument.Open(streamReader.BaseStream, false))
+                // Auto-detect format, supports:
+                //  - Binary Excel files (2.0-2003 format; *.xls)
+                //  - OpenXml Excel files (2007 format; *.xlsx, *.xlsb)
+                using (var reader = ExcelReaderFactory.CreateReader(stream))
                 {
+                    // Choose one of either 1 or 2:
 
-                    //Read the first Sheet from Excel file.
-                    Sheet sheet = doc.WorkbookPart.Workbook.Sheets.GetFirstChild<Sheet>();
-
-                    //Get the Worksheet instance.
-                    Worksheet worksheet = (doc.WorkbookPart.GetPartById(sheet.Id.Value) as WorksheetPart).Worksheet;
-
-                    //Fetch all the rows present in the Worksheet.
-                    IEnumerable<Row> rows = worksheet.GetFirstChild<SheetData>().Descendants<Row>();
-
-                    //Create a new DataTable.
-                    DataTable dt = new DataTable();
-
-                    //Loop through the Worksheet rows.
-                    foreach (Row row in rows)
+                    // 1. Use the reader methods
+                    do
                     {
-                        //Use the first row to add columns to DataTable.
-                        if (row.RowIndex.Value == 1)
+                        while (reader.Read())
                         {
-                            foreach (Cell cell in row.Descendants<Cell>())
-                            {
-                                dt.Columns.Add(GetValue(doc, cell));
-                            }
+                            // reader.GetDouble(0);
                         }
-                        else
-                        {
-                            //Add rows to DataTable.
-                            dt.Rows.Add();
-                            int i = 0;
-                            foreach (Cell cell in row.Descendants<Cell>())
-                            {
-                                dt.Rows[dt.Rows.Count - 1][i] = GetValue(doc, cell);
-                                i++;
-                            }
-                        }
-                    }
+                    } while (reader.NextResult());
 
-                    return dt;
+                    //// reader.IsFirstRowAsColumnNames
+                    var conf = new ExcelDataSetConfiguration
+                    {
+                        ConfigureDataTable = _ => new ExcelDataTableConfiguration
+                        {
+                            UseHeaderRow = true
+                        }
+                    };
+
+                    // 2. Use the AsDataSet extension method
+                    var result = reader.AsDataSet(conf);
+                    // Now you can get data from each sheet by its index or its "name"
+                    return result.Tables[0];
+
+                    // The result of each spreadsheet is in result.Tables
                 }
 
             }
@@ -67,14 +57,5 @@ public class ExcelReader : IExcelReader
             }
         }
     }
-    private string GetValue(SpreadsheetDocument doc, Cell cell)
-    {
-        string value = cell.CellValue.InnerText;
-        if (cell.DataType != null && cell.DataType.Value == CellValues.SharedString)
-        {
-            return doc.WorkbookPart.SharedStringTablePart.SharedStringTable.ChildElements.GetItem(int.Parse(value)).InnerText;
-        }
-        return value;
-    }
-
 }
+

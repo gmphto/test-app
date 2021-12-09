@@ -10,7 +10,7 @@
         "projectUniqueName": "C:\\Code\\test\\src\\ApplicationCore\\Application.csproj",
         "projectName": "Application",
         "projectPath": "C:\\Code\\test\\src\\ApplicationCore\\Application.csproj",
-        "packagesPath": "C:\\Users\\g.mphato.admin\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\gift.mphato\\.nuget\\packages\\",
         "outputPath": "C:\\Code\\test\\src\\ApplicationCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
@@ -18,7 +18,7 @@
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\g.mphato.admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gift.mphato\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -27,6 +27,7 @@
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -49,6 +50,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
             "DocumentFormat.OpenXml": {
               "target": "Package",
               "version": "[2.14.0, )"
@@ -99,7 +108,7 @@
         "projectUniqueName": "C:\\Code\\test\\src\\Domain\\Domain.csproj",
         "projectName": "Domain",
         "projectPath": "C:\\Code\\test\\src\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\g.mphato.admin\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\gift.mphato\\.nuget\\packages\\",
         "outputPath": "C:\\Code\\test\\src\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
@@ -107,7 +116,7 @@
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\g.mphato.admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gift.mphato\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -116,6 +125,7 @@
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -133,6 +143,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -158,7 +178,7 @@
         "projectUniqueName": "C:\\Code\\test\\src\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
         "projectPath": "C:\\Code\\test\\src\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\g.mphato.admin\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\gift.mphato\\.nuget\\packages\\",
         "outputPath": "C:\\Code\\test\\src\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
@@ -166,7 +186,7 @@
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\g.mphato.admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gift.mphato\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -175,6 +195,7 @@
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -200,6 +221,14 @@
             "DocumentFormat.OpenXml": {
               "target": "Package",
               "version": "[2.14.0, )"
+            },
+            "ExcelDataReader": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            },
+            "ExcelDataReader.DataSet": {
+              "target": "Package",
+              "version": "[3.6.0, )"
             },
             "Microsoft.AspNetCore.ApiAuthorization.IdentityServer": {
               "target": "Package",
@@ -263,7 +292,7 @@
         "projectUniqueName": "C:\\Code\\test\\src\\PublicApi\\PublicApi.csproj",
         "projectName": "PublicApi",
         "projectPath": "C:\\Code\\test\\src\\PublicApi\\PublicApi.csproj",
-        "packagesPath": "C:\\Users\\g.mphato.admin\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\gift.mphato\\.nuget\\packages\\",
         "outputPath": "C:\\Code\\test\\src\\PublicApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
@@ -271,7 +300,7 @@
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\g.mphato.admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gift.mphato\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -280,6 +309,7 @@
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

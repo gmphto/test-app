@@ -84,3 +84,8 @@ C:\Code\test\src\PublicApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Syste
 C:\Code\test\src\PublicApi\bin\Debug\net6.0\SeedData\Test_Accounts.xlsx
 C:\Code\test\src\PublicApi\bin\Debug\net6.0\Humanizer.dll
 C:\Code\test\src\PublicApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Code\test\src\PublicApi\bin\Debug\net6.0\FluentValidation.dll
+C:\Code\test\src\PublicApi\obj\Debug\net6.0\PublicApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Code\test\src\PublicApi\bin\Debug\net6.0\ExcelDataReader.dll
+C:\Code\test\src\PublicApi\bin\Debug\net6.0\ExcelDataReader.DataSet.dll
+C:\Code\test\src\PublicApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

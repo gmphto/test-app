@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "LtS33OPi9wBiEIDzif2yDFhz4fnBRXbTxZiu72xSlKubhIdlRRCoeyTbUUI/n+qhXo80hnXJ/cO4hrI5doHWGg==",
+  "dgSpecHash": "kCAS9oulDxc+Xp9fO1E4rLyCkLe/Vh5xZiD1kR+dAFxx2BnsdvzR6hjtz0NG9mRx0UwlQo5+dbK36QTSGHVDQg==",
   "success": true,
   "projectFilePath": "C:\\Code\\test\\src\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\gift.mphato\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\gift.mphato\\.nuget\\packages\\fluentvalidation\\10.3.5\\fluentvalidation.10.3.5.nupkg.sha512",
+    "C:\\Users\\gift.mphato\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\gift.mphato\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

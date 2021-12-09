@@ -1,4 +1,6 @@
+C:\Code\test\src\Infrastructure\bin\Debug\net6.0\SeedData\Test_Accounts.xlsx
 C:\Code\test\src\Infrastructure\bin\Debug\net6.0\Infrastructure.deps.json
+C:\Code\test\src\Infrastructure\bin\Debug\net6.0\Infrastructure.runtimeconfig.json
 C:\Code\test\src\Infrastructure\bin\Debug\net6.0\Infrastructure.dll
 C:\Code\test\src\Infrastructure\bin\Debug\net6.0\ref\Infrastructure.dll
 C:\Code\test\src\Infrastructure\bin\Debug\net6.0\Infrastructure.pdb
@@ -15,6 +17,4 @@ C:\Code\test\src\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CopyCompl
 C:\Code\test\src\Infrastructure\obj\Debug\net6.0\Infrastructure.dll
 C:\Code\test\src\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
 C:\Code\test\src\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
-C:\Code\test\src\Infrastructure\bin\Debug\net6.0\SeedData\Test_Accounts.xlsx
-C:\Code\test\src\Infrastructure\bin\Debug\net6.0\Infrastructure.runtimeconfig.json
 C:\Code\test\src\Infrastructure\obj\Debug\net6.0\Infrastructure.genruntimeconfig.cache

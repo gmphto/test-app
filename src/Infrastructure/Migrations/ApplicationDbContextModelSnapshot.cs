@@ -24,7 +24,7 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.AccountItem", b =>
                 {
-                    b.Property<int>("AccountId")
+                    b.Property<int>("Id")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Created")
@@ -45,18 +45,15 @@ namespace Infrastructure.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AccountId");
+                    b.HasKey("Id");
 
                     b.ToTable("AccountItems");
                 });
 
-            modelBuilder.Entity("Domain.Entities.ReadingItem", b =>
+            modelBuilder.Entity("Domain.Entities.MeterReadItem", b =>
                 {
-                    b.Property<int>("ReadingId")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("Id")
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReadingId"), 1L, 1);
 
                     b.Property<int>("AccountId")
                         .HasColumnType("int");
@@ -77,14 +74,15 @@ namespace Infrastructure.Migrations
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Value")
-                        .HasColumnType("int");
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ReadingId");
+                    b.HasKey("Id");
 
                     b.HasIndex("AccountId");
 
-                    b.ToTable("ReadingItems");
+                    b.ToTable("MeterReadItems");
                 });
 
             modelBuilder.Entity("Duende.IdentityServer.EntityFramework.Entities.DeviceFlowCodes", b =>
@@ -430,7 +428,7 @@ namespace Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Domain.Entities.ReadingItem", b =>
+            modelBuilder.Entity("Domain.Entities.MeterReadItem", b =>
                 {
                     b.HasOne("Domain.Entities.AccountItem", "Account")
                         .WithMany("ReadingItems")

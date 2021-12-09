@@ -42,14 +42,13 @@ public static class ApplicationDbContextSeed
             if (!context.AccountItems.Any()) // Seed accounts, if needed
             {
 
-                var list = 
-                data.AsEnumerable()
+                var list = data.AsEnumerable()
                     .Select(row => new AccountItem
-                 {
-                     AccountId = int.Parse(row.Field<string>("AccountId")),
-                     FirstName = row.Field<string>("FirstName"),
-                     LastName = row.Field<string>("FirstName")
-                 }).ToList();
+                    {
+                         Id = Convert.ToInt32(row.Field<double>("AccountId")),
+                         FirstName = row.Field<string>("FirstName"),
+                         LastName = row.Field<string>("FirstName")
+                    }).ToList();
 
                 context.AccountItems.AddRange(list);
 

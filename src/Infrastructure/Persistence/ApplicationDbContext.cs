@@ -28,7 +28,7 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, 
         _dateTime = dateTime;
     }
 
-    public DbSet<ReadingItem> ReadingItems => Set<ReadingItem>();
+    public DbSet<MeterReadItem> ReadingItems => Set<MeterReadItem>();
     public DbSet<AccountItem> AccountItems => Set<AccountItem>();
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
@@ -69,10 +69,10 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, 
         builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
         builder.Entity<AccountItem>()
-       .HasKey(c => c.AccountId);
+       .HasKey(c => c.Id);
 
-        builder.Entity<ReadingItem>()
-        .HasKey(c => c.ReadingId);
+        builder.Entity<MeterReadItem>()
+        .HasKey(c => c.Id);
 
         base.OnModelCreating(builder);
     }

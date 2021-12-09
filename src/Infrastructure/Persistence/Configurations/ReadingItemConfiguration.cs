@@ -4,12 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Persistence.Configurations;
 
-public class ReadingItemConfiguration : IEntityTypeConfiguration<ReadingItem>
+public class ReadingItemConfiguration : IEntityTypeConfiguration<MeterReadItem>
 {
-    public void Configure(EntityTypeBuilder<ReadingItem> builder)
+    public void Configure(EntityTypeBuilder<MeterReadItem> builder)
     {
-        builder.Property(t => t.ReadingId)
+        builder.Property(t => t.Id)
             .IsRequired();
+
 
         builder.Property(t => t.Value)
             .IsRequired();
@@ -17,10 +18,5 @@ public class ReadingItemConfiguration : IEntityTypeConfiguration<ReadingItem>
         builder.Property(t => t.Date)
             .IsRequired();
 
-        // FK Configuration
-        //builder
-        //    .HasOne<AccountItem>(ac => ac.Account)
-        //    .WithMany(g => g.ReadingItems)
-        //    .HasForeignKey(ac => ac.AccountId);
     }
 }

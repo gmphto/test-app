@@ -5,7 +5,7 @@ namespace Application.Common.Interfaces;
 
 public interface IApplicationDbContext
 {
-    DbSet<ReadingItem> ReadingItems { get; }
+    DbSet<MeterReadItem> ReadingItems { get; }
 
     DbSet<AccountItem> AccountItems { get; }
 

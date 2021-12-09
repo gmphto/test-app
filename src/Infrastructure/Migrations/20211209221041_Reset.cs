@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Infrastructure.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Reset : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,7 @@ namespace Infrastructure.Migrations
                 name: "AccountItems",
                 columns: table => new
                 {
-                    AccountId = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -23,7 +23,7 @@ namespace Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AccountItems", x => x.AccountId);
+                    table.PrimaryKey("PK_AccountItems", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -123,13 +123,12 @@ namespace Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ReadingItems",
+                name: "MeterReadItems",
                 columns: table => new
                 {
-                    ReadingId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<int>(type: "int", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Value = table.Column<int>(type: "int", nullable: false),
+                    Value = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AccountId = table.Column<int>(type: "int", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -138,12 +137,12 @@ namespace Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ReadingItems", x => x.ReadingId);
+                    table.PrimaryKey("PK_MeterReadItems", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ReadingItems_AccountItems_AccountId",
+                        name: "FK_MeterReadItems_AccountItems_AccountId",
                         column: x => x.AccountId,
                         principalTable: "AccountItems",
-                        principalColumn: "AccountId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -309,6 +308,11 @@ namespace Infrastructure.Migrations
                 column: "Use");
 
             migrationBuilder.CreateIndex(
+                name: "IX_MeterReadItems_AccountId",
+                table: "MeterReadItems",
+                column: "AccountId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_PersistedGrants_ConsumedTime",
                 table: "PersistedGrants",
                 column: "ConsumedTime");
@@ -327,11 +331,6 @@ namespace Infrastructure.Migrations
                 name: "IX_PersistedGrants_SubjectId_SessionId_Type",
                 table: "PersistedGrants",
                 columns: new[] { "SubjectId", "SessionId", "Type" });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ReadingItems_AccountId",
-                table: "ReadingItems",
-                column: "AccountId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -358,10 +357,10 @@ namespace Infrastructure.Migrations
                 name: "Keys");
 
             migrationBuilder.DropTable(
-                name: "PersistedGrants");
+                name: "MeterReadItems");
 
             migrationBuilder.DropTable(
-                name: "ReadingItems");
+                name: "PersistedGrants");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
